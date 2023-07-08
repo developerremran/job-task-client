@@ -2,8 +2,8 @@
 
 
 const UserSelect = (user) => {
-    const { first_name, last_name, email, gender, avatar, domain, available}=user;
-    const userInfo={ first_name, last_name, email, gender, avatar, domain, available}
+    const { first_name, last_name, email, gender, avatar, domain, available,_id}=user;
+    const userInfo={ first_name, last_name, email, gender, avatar, domain, available,_id}
     
     return fetch(`${import.meta.env.VITE_lOCAL_Server}/teamMember?email=${user.email}`,{
         method:'POST',

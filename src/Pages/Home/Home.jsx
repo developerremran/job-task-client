@@ -3,7 +3,7 @@ import UserList from './UserList/UserList';
 
 const Home = () => {
     return (
-        <div>
+        <div className='overflow-hidden'>
            <UserList></UserList>
         </div>
     );

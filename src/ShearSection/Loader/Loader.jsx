@@ -1,25 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Header from '../ShearSection/Header/Header';
-import Footer from '../ShearSection/Footer/Footer';
-import { Outlet } from 'react-router-dom';
+import React from 'react';
 
-const HomePageLayout = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulating data loading delay
-    const delay = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    // Clean up the delay timer
-    return () => clearTimeout(delay);
-  }, []);
-
-  if (isLoading) {
-    // Render a loading state while content is being loaded
+const Loader = () => {
     return (
-      <div className='w-full h-screen flex items-center justify-center'>
+        <div>
+             <div className='w-full h-screen flex items-center justify-center'>
         <div className='spinner'>
           <button
             type='button'
@@ -49,18 +33,8 @@ const HomePageLayout = () => {
           </button>
         </div>
       </div>
+        </div>
     );
-  }
-
-  return (
-    <div>
-     <div className='w-full'>
-     <Header></Header>
-     </div>
-      <Outlet></Outlet>
-      <Footer></Footer>
-    </div>
-  );
 };
 
-export default HomePageLayout;
+export default Loader;
